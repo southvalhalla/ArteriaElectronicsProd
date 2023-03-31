@@ -1,4 +1,4 @@
-<?php include "../log/conexion.php"
+<?php include "../config/conexion.php";
 
     $cod = rand(5555,9999);
     $fecha = $_POST['txtfecha'];

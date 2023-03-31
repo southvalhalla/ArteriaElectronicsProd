@@ -10,18 +10,38 @@
         <link href="../comple/style.css" rel="stylesheet">
     </head>
     <body class="bg-dark bg-gradient">
-    <?php
+                <?php
                     include('../comple/navBar.php');
                 ?>
-        <table class="table table-dark table-striped table-hover d-flex justify-content-center border-secondary rounded">
-            
-            <div id="barrabuscar" class="ms-2 form-group">
-                <form method="POST" class="">
-                    <input type="text" class="form form-control w-25 " name="txtbuscar" id="cajabuscar" placeholder="Ingresar nombre de usuario"><input type="submit" value="Buscar" name="btnbuscar" class="btn btn-success mt-2">
-                </form>
-                
-            </div>
-            <tr><th colspan="6" class="text-center"><h1>LISTAR COMPRAS</h1><th><button class="btn btn-primary mt-2" onclick="abrirform()">Agregar</button></th></tr>
+        <div id="barrabuscar" class="mx-auto my-3">
+            <form method="POST" class="">
+                <div class="row">
+                    <div class="col-4 offset-3">
+                        <input type="text" name="txtbuscar" id="cajabuscar" placeholder="Ingresar usuario" class="form form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="submit" value="Buscar" class="btn btn-success" name="btnbuscar">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <table class="table table-dark table-striped table-hover text-center justify-content-center border-secondary rounded mx-auto" style="width: auto;">
+            <tr>
+                <th colspan="6" class="text-center"><h1>LISTAR COMPRAS</h1></th>
+                <th>
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-primary mt-2" onclick="abrirform()">Agregar</button>
+                        </div>
+                        <div class="col-6">
+                            <a href="genratepdf.php">
+                                <button class="btn btn-info mt-2"">Informe</button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </th>
+            </tr>
             <tr>
                 <th>ID</th>
                 <th>Fecha</th>
@@ -49,7 +69,22 @@
                     <td><?= $mostrar['estadoPedido'] ?></td>
                     <td><?= $mostrar['metodoPago'] ?></td>
                     <td><?= $mostrar['precioTotal'] ?></td>
-                    <td style='width:26%'><a class='btn btn-success' href=<?= "editar.php?cod=$mostrar[cod]" ?>>Modificar</a> | <a class='btn btn-danger' href=<?= "eliminar.php?cod=$mostrar[cod]" ?> onClick=<?="return confirm('¿Estás seguro de eliminar a $mostrar[cod]?')"?>>Eliminar</a></td>";           
+                    <td style='width:26%'>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="<?= "editar.php?cod=$mostrar[cod]" ?>">
+                                    <button class='btn btn-success'>Modificar</button>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="<?= "eliminar.php?cod=$mostrar[cod]" ?>">
+                                    <button class='btn btn-danger' onClick=<?="return confirm('¿Estás seguro de eliminar a $mostrar[cod]?')"?>>Eliminar</button>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                    </td>";           
             <?php } ?>
         </table>
         <script>

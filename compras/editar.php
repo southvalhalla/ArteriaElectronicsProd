@@ -1,5 +1,5 @@
 <?php
-include "../log/conexion.php"
+include "../config/conexion.php";
 include_once("index.php");
 
 $codigo = $_GET['cod'];
