@@ -1,10 +1,10 @@
 <?php
-include "../log/conexion.php"
+include "../config/conexion.php";
 include_once("index.php");
 
-$codigo = $_GET['cod'];
+$id = $_GET['id'];
 
-$querybuscar = mysqli_query($conexion, "SELECT * FROM categorias WHERE cod=$codigo");
+$querybuscar = mysqli_query($conexion, "SELECT * FROM categorias WHERE id=$id");
 
 while($mostrar = mysqli_fetch_array($querybuscar))
 {
@@ -28,7 +28,7 @@ while($mostrar = mysqli_fetch_array($querybuscar))
 		<tr><th colspan="2">Modificar categoria</th></tr>
             <tr> 
                 <td>id</td>
-                <td><input type="number" name="txtcodigo" value="<?php echo $codigo;?>" required></td>
+                <td><input type="number" name="txtcodigo" value="<?php echo $codigo;?>" disabled required></td>
             </tr>
             <tr> 
                 <td>Tipo Producto</td>

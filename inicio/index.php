@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="comple/style.css" rel="stylesheet">
+    <link href="../comple/style.css" rel="stylesheet">
 
     <title>Arteria</title>
     <style>
@@ -30,28 +30,28 @@
 <body class="bg-black">
 
     <?php
-        $page = 0;
-        include('comple/navBar.php');
+        $page = 1;
+        include('../comple/navBar.php');
     ?>
     <div class="w-25 h-25 mx-auto">
-        <img src="imagenes/logo_negro.jpg" alt="Descripción de la imagen" class="w-100 h-100 mx-auto">
+        <img src="https://i.pinimg.com/originals/91/a6/44/91a644fc30b69866a400b31b1a9db35f.jpg" alt="Descripción de la imagen" class="w-100 h-100 mx-auto">
     </div>
     <div class="row my-2">
         <div class="col-10 offset-1">
             <form method="POST" action="" class="text-white" >
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-2">
-                            <label class="text-center" for="doc">BUSQUEDA</label>
+                        <div class="col-1">
+                            <label class="text-center mx-auto" for="doc">BUSQUEDA</label>
                         </div>
-                        <div class="col-3">
-                            <select name="tipo" class="form-select">
+                        <div class="col-2">
+                            <select name="tipo" class="form-select mx-auto">
                                 <option value="nombre">Nombre/Tipo</option>
                                 <option value="documento">Documento/ID</option>                        
                             </select>
                         </div>
                         <div class="col-2">
-                            <select name="selec" class="form-select">
+                            <select name="selec" class="form-select mx-auto">
                                 <option value="usuario">Usuarios</option>
                                 <option value="compras">Compras</option>
                                 <option value="categorias">Categorias</option>
@@ -59,17 +59,22 @@
                             </select>
                         </div>
                         <div class="col-3">
-                            <input type="text" name="doc" id="doc" class="form-control">
+                            <input type="text" name="doc" id="doc" class="form-control  mx-auto">
                         </div>
-                        <div class="col-1">
-                            <input class="btn btn-primary" type="submit" value="Consultar" name="btn_consultar">
+                        <div class="col-2">
+                            <input class="btn btn-primary mx-auto" type="submit" value="Consultar" name="btn_consultar">
+                        </div>
+                        <div class="col-2">
+                            <a href="genratepdf.php">
+                                <button type="button" class="btn btn-info">Informe General</button>
+                            </a>
                         </div>
                     </div>
                 </div>
             </form>
             <div class="text-white">
             <?php
-                include_once "config/conexion.php"; 
+                include_once "../config/conexion.php"; 
 
                 $doc = "";
                 $select = "";

@@ -1,11 +1,10 @@
-<?php include "../log/conexion.php"
+<?php include "../config/conexion.php";
 
-    $cod = $_POST['txtcod'];
     $tipo_pro = $_POST['txttipo_pro'];
     $carac = $_POST['txtcarac'];
     
 
-    mysqli_query($conexion,"INSERT INTO categorias(cod,tipo_pro,carac) Values('$cod','$tipo_pro','$carac')");
+    mysqli_query($conexion,"INSERT INTO categorias(tipo_pro,carac) Values('$tipo_pro','$carac')");
     
     header("Location:index.php");
 

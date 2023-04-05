@@ -13,7 +13,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
 		body {
-			background-image: url('./imagenes/logo.jpg');
+			background-image: url('https://i.pinimg.com/originals/c7/4c/6c/c74c6c43ecedf84d4d7615de1d9287ef.jpg');
 			background-repeat: no-repeat;
 			background-size: cover;
       background-color: transparent;

@@ -16,7 +16,7 @@ if (!empty($_POST["btningresar"])){
 
         if ($datos=mysqli_fetch_object($result)){
             $error= "ok"; 
-            header("Location: inicio.php");
+            header("Location: inicio/");
         
         } else{
             

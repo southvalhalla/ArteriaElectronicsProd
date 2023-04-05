@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-6">
                             <a href="genratepdf.php">
-                                <button class="btn btn-info mt-2"">Informe</button>
+                                <button class="btn btn-info mt-2">Informe</button>
                             </a>
                         </div>
                     </div>

@@ -34,10 +34,10 @@
 
                 if(isset($_POST['btnbuscar'])){
                     $buscar = $_POST['txtbuscar'];
-                    $queryusuarios = mysqli_query($conexion, "SELECT num,cod,tipo_pro,carac FROM categorias where tipo_pro like '".$buscar."%'");
+                    $queryusuarios = mysqli_query($conexion, "SELECT id,tipo_pro,carac FROM categorias where tipo_pro like '".$buscar."%'");
                 }
                 else{
-                    $queryusuarios = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY num asc");
+                    $queryusuarios = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY id asc");
                 }
                 $numerofila = 0;
                 while($mostrar = mysqli_fetch_array($queryusuarios)){   
@@ -45,10 +45,10 @@
             ?>
                     <tr>       
                     <td><?= $numerofila ?></td>         
-                    <td><?= $mostrar['cod'] ?></td>                
+                    <td><?= $mostrar['id'] ?></td>                
                     <td><?= $mostrar['tipo_pro'] ?></td>
                     <td><?= $mostrar['carac'] ?></td>
-                    <td style='width:auto'><a class='btn btn-success' href=<?= "editar.php?cod=$mostrar[cod]" ?> >Modificar</a> | <a class='btn btn-danger' href=<?= "eliminar.php?cod=$mostrar[cod]" ?> onClick=<?= "return confirm('¿Estás seguro de eliminar a $mostrar[tipo_pro]?')" ?> >Eliminar</a></td> 
+                    <td style='width:auto'><a class='btn btn-success' href=<?= "editar.php?id=$mostrar[id]" ?> >Modificar</a> | <a class='btn btn-danger' href=<?= "eliminar.php?id=$mostrar[id]" ?> onClick=<?= "return confirm('¿Estás seguro de eliminar a $mostrar[tipo_pro]?')" ?> >Eliminar</a></td> 
             <?php } ?>
         </table>
         <script>
@@ -65,10 +65,6 @@
             <form action="agregar.php" class="contenedor_popup" method="POST">
                 <table>
                     <tr><th colspan="2">Categoria</th></tr>
-                    <tr>
-                        <td>id</td>
-                        <td><input type="number" name="txtcod" required></td>
-                    </tr>
                     <tr>
                         <td>tipo_producto</td>
                         <td><input type="text" name="txttipo_pro" required></td>
